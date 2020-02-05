@@ -12,3 +12,32 @@
 12)Այն թույլ է տալիս հղում կատարել մեթոդին,առանց նրան ինիցիալիզացնելու։
 13)Functional Interfaces- պատճեն։
 14)
+package com.company;
+
+@FunctionalInterface
+public interface MyFunc {
+    void func();
+}
+
+package com.company;
+
+class MyClass {
+    static void myStaticMethod() {
+        System.out.println("Hello");
+    }
+}
+
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        String text;
+        myMethod(MyClass::myStaticMethod);
+    }
+
+    private static void myMethod(MyFunc func) {
+        func.func();
+    }
+}
+15)
