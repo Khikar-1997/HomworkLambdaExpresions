@@ -1,13 +1,16 @@
 package com.company;
 
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
-        String inStr = "Lambda Expressions Expand Java";
-        String outStr;
-        StringFunc stringFunc = ((text) -> text.replaceAll(" ", ""));
-        outStr = LambdaArgumentDemo.changeStr(stringFunc, inStr);
-        System.out.println(outStr);
+        MyintNum myintNum = new MyintNum(8);
+        Random random = new Random();
+        int number = random.nextInt(15);
+        IntPredicate result = myintNum::hasCommonFactor;
+        System.out.println(number);
+        System.out.println(result.test(number));
     }
 }
 
